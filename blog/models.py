@@ -13,6 +13,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
+    # этот метод сохраняет в бд данные модели
     def publish(self):
         self.published_date = timezone.now()
         self.save()
